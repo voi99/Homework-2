@@ -1,0 +1,35 @@
+.container {
+  width: 70vw;
+  margin: auto;
+  text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container h1 {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--whitesmoke);
+}
+
+.task {
+  display: block;
+  background-color: #313134;
+  padding: 1.5rem;
+  border-radius: 0.4rem;
+  margin-bottom: 0.65rem;
+  color: var(--whitesmoke);
+}
+
+.task:hover {
+  cursor: pointer;
+  background-color: var(--whitesmoke);
+  color: #313134;
+  transition: background-color ease-in-out 500ms;
+}
+
+.task h2 {
+  margin: 0;
+}
