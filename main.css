@@ -1,6 +1,4 @@
 .container {
-  width: 70vw;
-  margin: auto;
   text-align: center;
 }
 
@@ -8,15 +6,9 @@
   text-decoration: none;
 }
 
-.container h1 {
-  display: inline-block;
-  margin-top: 2rem;
-  color: var(--whitesmoke);
-}
-
 .task {
   display: block;
-  background-color: #313134;
+  background-color: var(--dark-grey);
   padding: 1.5rem;
   border-radius: 0.4rem;
   margin-bottom: 0.65rem;

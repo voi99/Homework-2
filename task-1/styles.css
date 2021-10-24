@@ -1,0 +1,75 @@
+.main-content {
+  background-color: var(--dark-grey);
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+}
+
+.addForm {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.4rem;
+  border: none;
+  margin-right: 0.4rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.btn {
+  font-family: inherit;
+  border: none;
+  background-color: var(--background-black);
+  color: inherit;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--whitesmoke);
+  color: var(--background-black);
+  transition: background-color ease-in-out 250ms;
+}
+
+.list-group {
+  padding: 0;
+  margin: 0;
+}
+
+.list-group-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-black);
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  margin-bottom: 0.65rem;
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: var(--lighter-grey);
+}
+
+.selected {
+  background-color: var(--lighter-grey);
+}
+
+.del-btn {
+  border: none;
+  border-radius: 0.4rem;
+  font-family: inherit;
+  background-color: var(--blueviolet);
+  padding: 0.2rem 0.6rem;
+  float: right;
+  cursor: pointer;
+}
+
+.del-btn:hover {
+  color: var(--whitesmoke);
+  font-weight: bold;
+}
