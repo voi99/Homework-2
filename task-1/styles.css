@@ -1,9 +1,3 @@
-.main-content {
-  background-color: var(--dark-grey);
-  border-radius: 0.4rem;
-  padding: 1.5rem;
-}
-
 .addForm {
   display: flex;
   align-items: center;

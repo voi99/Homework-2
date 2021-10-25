@@ -39,6 +39,12 @@ body {
   text-decoration: none;
 }
 
+.main-content {
+  background-color: var(--dark-grey);
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+}
+
 footer p {
   color: rgba(255, 255, 255, 0.16);
 }

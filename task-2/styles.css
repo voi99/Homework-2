@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-content {
+  height: 85vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas: 'player-x' 'table' 'player-o';
+  align-items: center;
+  padding: 1.5rem 0.7rem;
+}
+
+.playerXinfo,
+.playerOinfo {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--lighter-grey);
+  border-radius: 0.4rem;
+  width: 80%;
+  margin: auto;
+}
+
+.playerXinfo {
+  grid-area: player-x;
+}
+
+table {
+  border-collapse: collapse;
+  grid-area: table;
+  width: 100%;
+  height: 100%;
+  font-size: 0.4rem;
+}
+
+.playerYinfo {
+  grid-area: player-y;
+}
+
+.cell {
+  text-align: center;
+  height: 33%;
+  width: 33%;
+  border: 0.3rem solid var(--background-black);
+  cursor: not-allowed;
+  font-weight: bold;
+  font-size: 10em;
+  position: relative;
+}
+
+table tr:first-child td {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child {
+  border-right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .cell:not(.x):not(.o):hover::after {
+    content: '';
+    position: absolute;
+    background-color: var(--background-black);
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .main-content {
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80vw;
+  }
+}
