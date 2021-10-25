@@ -52,18 +52,3 @@
 .selected {
   background-color: var(--lighter-grey);
 }
-
-.del-btn {
-  border: none;
-  border-radius: 0.4rem;
-  font-family: inherit;
-  background-color: var(--blueviolet);
-  padding: 0.2rem 0.6rem;
-  float: right;
-  cursor: pointer;
-}
-
-.del-btn:hover {
-  color: var(--whitesmoke);
-  font-weight: bold;
-}

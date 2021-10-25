@@ -6,6 +6,33 @@
     <title>Task 3</title>
     <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="../index.html"><h1>Homework 2</h1></a>
+        <h1>&nbsp|&nbsp</h1>
+        <h1>Task 3</h1>
+      </header>
+      <main class="main-content">
+        <form action="" class="form">
+          <input type="number" class="input" id="no" required min="1" />
+          <input type="submit" value="Submit" class="btn" />
+        </form>
+
+        <div class="add-new-square">
+          <i class="fas fa-plus-square fa-2x add-square"></i>
+          <p>Add Square</p>
+        </div>
+
+        <div class="squares"></div>
+        <p class="is-palindrome">Unijeta rijec nije palindrom</p>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

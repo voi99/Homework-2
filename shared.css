@@ -6,6 +6,7 @@
   --lighter-grey: #47474b;
   --background-black: #202023;
   --blueviolet: #8a2be2;
+  --green: #0a5c0a;
 }
 
 * {
@@ -43,6 +44,21 @@ body {
   background-color: var(--dark-grey);
   border-radius: 0.4rem;
   padding: 1.5rem;
+}
+
+.del-btn {
+  border: none;
+  border-radius: 0.4rem;
+  font-family: inherit;
+  background-color: var(--blueviolet);
+  padding: 0.2rem 0.6rem;
+  float: right;
+  cursor: pointer;
+}
+
+.del-btn:hover {
+  color: var(--whitesmoke);
+  font-weight: bold;
 }
 
 footer p {

@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.4rem;
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.btn {
+  font-family: inherit;
+  border: none;
+  background-color: var(--background-black);
+  color: inherit;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--whitesmoke);
+  color: var(--background-black);
+  transition: background-color ease-in-out 250ms;
+  font-weight: bold;
+}
+
+.add-new-square {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-new-square > * {
+  padding-right: 0.5rem;
+}
+
+.squares {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.square {
+  background-color: var(--background-black);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  padding: 0.3rem;
+}
+
+.square-input {
+  background-color: var(--background-black);
+  font-family: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  border-radius: 0.4rem;
+}
+
+.add-square:hover {
+  cursor: pointer;
+  color: var(--blueviolet);
+}
+
+.is-palindrome {
+  background-color: var(--blueviolet);
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.4rem;
+  display: none;
+}
