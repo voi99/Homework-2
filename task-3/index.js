@@ -78,7 +78,10 @@ function updateCharactersAndPolindrome() {
 }
 
 function checkPalindrome(str) {
-  return str.toLowerCase() === str.split('').reverse().join('').toLowerCase();
+  return (
+    str.toLowerCase() === str.split('').reverse().join('').toLowerCase() &&
+    !str.match(/\d/)
+  );
 }
 
 function setPolindromeElement(color, text) {
