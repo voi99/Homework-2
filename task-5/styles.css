@@ -1,0 +1,81 @@
+.modes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.5rem 2.5rem;
+  font-family: inherit;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  color: var(--whitesmoke);
+  cursor: pointer;
+  transition: background-color ease-in-out 400ms;
+}
+
+.modes > button {
+  background-color: var(--lighter-grey);
+  flex-grow: 1;
+}
+
+.modes > button:hover {
+  background-color: var(--whitesmoke);
+  color: #313134;
+}
+
+#active {
+  background-color: var(--whitesmoke);
+  color: #313134;
+}
+
+.clock {
+  height: 15vh;
+  display: none;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock > * {
+  padding: 0.4rem;
+}
+
+.controls {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls > * {
+  flex-grow: 1;
+}
+
+.start-btn {
+  background-color: #008000;
+}
+
+.start-btn:hover {
+  background-color: var(--green);
+}
+
+.stop-btn {
+  background-color: #ff0000;
+}
+
+.stop-btn:hover {
+  background-color: var(--darker-red);
+}
+
+.reset-btn {
+  background-color: var(--lighter-grey);
+}
+
+.reset-btn:hover {
+  background-color: grey;
+}
