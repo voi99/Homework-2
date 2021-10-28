@@ -6,6 +6,53 @@
     <title>Task 6</title>
     <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="../index.html"><h1>Homework 2</h1></a>
+        <h1>&nbsp|&nbsp</h1>
+        <h1>Task 6</h1>
+      </header>
+      <main class="main-content animate__animated animate__fadeIn">
+        <div class="start-screen">
+          <label
+            for="name"
+            class="animate__animated animate__fadeIn animate__delay-1s"
+            >Your Name</label
+          >
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="animate__animated animate__fadeIn animate__delay-2s"
+            placeholder="Enter your name"
+            autocomplete="off"
+          />
+          <button
+            class="
+              start-quiz
+              btn
+              animate__animated animate__fadeIn animate__delay-3s
+            "
+          >
+            Start Quiz
+          </button>
+          <p class="error animate__animated animate__fadeIn"></p>
+        </div>
+
+        <div class="question animate__animated animate__fadeIn">
+          <div class="question__text"></div>
+          <div class="question_answers"></div>
+          <button class="confirm-btn btn">Confirm</button>
+          <div class="player-details"></div>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
