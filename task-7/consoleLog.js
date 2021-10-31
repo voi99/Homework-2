@@ -12,10 +12,13 @@ console.log = function () {
 
 function createLogNode(message) {
   var node = document.createElement('div');
-  if (message.toString().startsWith('CHALLENGE')) {
-    node.style.color = 'var(--blueviolet)';
-    node.style.fontWeight = 'bold';
-  }
+  try {
+    if (message.toString().startsWith('CHALLENGE')) {
+      node.style.color = 'var(--blueviolet)';
+      node.style.fontWeight = 'bold';
+    }
+  } catch {}
+
   var textNode = document.createTextNode(message);
   node.appendChild(textNode);
   return node;
