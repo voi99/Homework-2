@@ -12,7 +12,7 @@ function init() {
     task.style.animationDelay = `${index + 0.5}s`;
   });
   footer.classList.add('animate__animated', 'animate__fadeIn');
-  footer.style.animationDelay = '6s';
+  footer.style.animationDelay = '7s';
 }
 
 init();
