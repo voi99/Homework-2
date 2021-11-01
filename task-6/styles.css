@@ -6,7 +6,9 @@
 }
 
 .start-screen > *,
-.confirm-btn {
+.confirm-btn,
+.next-btn,
+.new-game {
   text-align: center;
   width: 100%;
   padding: 0.5rem;
@@ -68,14 +70,54 @@
   background-color: var(--blueviolet);
 }
 
-.confirm-btn {
+.selected {
+  color: var(--background-black);
+  background-color: var(--blueviolet);
+}
+
+.confirm-btn,
+.next-btn,
+.new-game {
   margin: 0.3rem 0rem;
   font-size: 1em;
   padding: 0.65rem;
 }
 
+.next-btn,
+.new-game {
+  display: none;
+}
+
+.correctAnswer,
+.wrongAnswer {
+  margin: 0.3rem 0rem 0.6rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+.correctAnswer {
+  background-color: var(--green);
+}
+
+.wrongAnswer {
+  background-color: var(--darker-red);
+}
+
 .player-details {
   text-align: right;
+}
+
+.end-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.end-game > * {
+  margin: 0;
+  padding: 0.3rem;
 }
 
 @media only screen and (max-width: 648px) {

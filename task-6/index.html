@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -46,11 +50,20 @@
         </div>
 
         <div class="question animate__animated animate__fadeIn">
-          <div class="question__text"></div>
-          <div class="question_answers"></div>
-          <button class="confirm-btn btn">Confirm</button>
+          <div class="question__text animate__animated animate__fadeIn"></div>
+          <div class="question_answers animate__animated animate__fadeIn"></div>
+          <button class="confirm-btn btn animate__animated animate__fadeIn">
+            Confirm
+          </button>
+          <div class="info animate__animated animate__fadeIn"></div>
+          <button class="next-btn btn animate__animated animate__fadeIn">
+            Next Question
+          </button>
           <div class="player-details"></div>
         </div>
+        <button class="new-game btn animate__animated animate__fadeIn">
+          Play Again
+        </button>
       </main>
     </div>
     <script src="index.js"></script>

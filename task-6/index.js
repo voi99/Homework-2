@@ -11,7 +11,16 @@ let currentQuestion;
 let questionSection = $('.question');
 let questionText = $('.question__text');
 let answersSection = $('.question_answers');
+let confirmBtn = $('.confirm-btn');
+let nextBtn = $('.next-btn');
+let infoSection = $('.info');
+let playerDetails = $('.player-details');
+let newGame = $('.new-game');
+
 startBtn.addEventListener('click', handleStartQuiz);
+confirmBtn.addEventListener('click', handleConfirm);
+nextBtn.addEventListener('click', nextQuestion);
+newGame.addEventListener('click', handleNewGame);
 
 function handleStartQuiz(e) {
   if (nameInput.value.match(/^[a-zA-Z]+$/)) {
@@ -22,6 +31,8 @@ function handleStartQuiz(e) {
       randomOrderQuestions = questions.sort(() => 0.5 - Math.random());
       currentQuestion = 0;
       questionSection.style.display = 'block';
+      show();
+      updateScore(true);
       nextQuestion();
     }, 1000);
   } else {
@@ -30,8 +41,38 @@ function handleStartQuiz(e) {
   }
 }
 
+function updateScore(bool) {
+  if (bool) {
+    playerDetails.classList.remove('end-game');
+    playerDetails.textContent = `${playerName}[${currentQuestion}/${questions.length}]`;
+  } else {
+    const sadEmoji = document.createElement('i');
+    sadEmoji.classList.add('fas', 'fa-sad-tear', 'fa-2x');
+    playerDetails.classList.add('end-game');
+    playerDetails.innerHTML = `You Lost ${playerName} <br/> Score[${currentQuestion}/${questions.length}]<br/>`;
+    playerDetails.appendChild(sadEmoji);
+    newGame.style.display = 'block';
+  }
+}
+
+function deletePreviousAnswers() {
+  try {
+    const answers = $$('.answer');
+    Array.from(answers).forEach((answer) => answer.remove());
+  } catch {}
+}
+
 function nextQuestion() {
+  deletePreviousAnswers();
   showQuestion(randomOrderQuestions[currentQuestion]);
+  updateUI();
+}
+
+function updateUI() {
+  confirmBtn.style.display = 'block';
+  infoSection.classList.remove(infoSection.classList[1]);
+  infoSection.style.display = 'none';
+  nextBtn.style.display = 'none';
 }
 
 function showQuestion(q) {
@@ -40,8 +81,91 @@ function showQuestion(q) {
     let button = document.createElement('button');
     button.innerHTML = answer.answerText;
     button.classList.add('answer');
+    if (answer.isTrue) {
+      button.dataset.isTrue = answer.isTrue;
+    }
+    button.addEventListener('click', selectAnswer);
     answersSection.appendChild(button);
   });
+}
+
+function selectAnswer(e) {
+  if (e.target.classList.contains('selected')) {
+    e.target.classList.remove('selected');
+  } else {
+    e.target.classList.add('selected');
+  }
+}
+
+function handleConfirm() {
+  const answers = $$('[data-is-true]');
+  const playerAnswers = $$('.selected');
+  if (
+    answers.length === playerAnswers.length &&
+    Array.from(answers).every((answer) =>
+      Array.from(playerAnswers).includes(answer)
+    )
+  ) {
+    showAfterConfirm(true);
+  } else {
+    showAfterConfirm(false);
+  }
+}
+
+function showAfterConfirm(bool) {
+  confirmBtn.style.display = 'none';
+  infoSection.style.display = 'block';
+  infoSection.innerHTML = questions[currentQuestion].explanation;
+  const buttons = $$('.answer');
+  Array.from(buttons).forEach((a) => {
+    a.removeEventListener('click', selectAnswer);
+    a.style.pointerEvents = 'none';
+  });
+  if (bool) {
+    infoSection.classList.add('correctAnswer');
+    currentQuestion++;
+    if (currentQuestion >= questions.length) {
+      handleWin();
+      return;
+    }
+    nextBtn.style.display = 'block';
+    updateScore(true);
+  } else {
+    infoSection.classList.add('wrongAnswer');
+    updateScore(false);
+  }
+}
+
+function handleNewGame() {
+  try {
+    $('#win').remove();
+  } catch {}
+  newGame.style.display = 'none';
+  handleStartQuiz();
+}
+
+function show() {
+  questionText.style.display = 'block';
+  answersSection.style.display = 'flex';
+  playerDetails.style.display = 'block';
+}
+
+function handleWin() {
+  questionText.style.display = 'none';
+  answersSection.style.display = 'none';
+  infoSection.style.display = 'none';
+  playerDetails.style.display = 'none';
+  const div = document.createElement('div');
+  div.id = 'win';
+  const i = document.createElement('i');
+  i.classList.add('fas', 'fa-smile-beam', 'fa-2x');
+  i.style.padding = '0.4rem';
+  const p = document.createElement('p');
+  p.textContent = `Congratulations ${playerName}. You Won!`;
+  div.appendChild(p);
+  div.appendChild(i);
+  questionSection.appendChild(div);
+  newGame.style.display = 'block';
 }
 
 const questions = [
@@ -54,7 +178,7 @@ const questions = [
       { answerText: '20', isTrue: false },
     ],
     explanation:
-      'NASA stands for the National Aeronautics and Space Administration. It is an agency of the U.S. government.',
+      'There are about 2,000 computer languages in active use, whereas there were only 15 in use in 1970.',
   },
   {
     question: 'Which of these is not an early computer?',
@@ -65,7 +189,7 @@ const questions = [
       { answerText: 'SAGE', isTrue: false },
     ],
     explanation:
-      'There are about 2,000 computer languages in active use, whereas there were only 15 in use in 1970.',
+      'NASA stands for the National Aeronautics and Space Administration. It is an agency of the U.S. government.',
   },
   {
     question: 'Who founded Apple Computer?',
