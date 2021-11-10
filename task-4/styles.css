@@ -1,83 +1,85 @@
 body {
-  position: relative;
+   position: relative;
 }
 
 .img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+   display: block;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+   aspect-ratio: 16 / 9;
+   object-fit: cover;
 }
 
 @keyframes slideLeft {
-  from {
-    transform: translateX(100%);
-  }
+   from {
+      transform: translateX(100%);
+   }
 
-  to {
-    transform: translateX(0%);
-  }
+   to {
+      transform: translateX(0%);
+   }
 }
 
 @keyframes slideRight {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
+   from {
+      transform: translateX(-100%);
+   }
+   to {
+      transform: translateX(0%);
+   }
 }
 
 .gallery {
-  position: relative;
-  background-color: var(--dark-grey);
-  border-radius: 0.4rem;
-  overflow: hidden;
-  height: 50vh;
+   position: relative;
+   background-color: var(--dark-grey);
+   border-radius: 0.4rem;
+   overflow: hidden;
+   height: 80vh;
 }
 
 .growGallery {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5% 5%;
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5% 5%;
 }
 
 .imgGrow {
-  width: 90vw;
-  height: 90vh;
+   width: 90vw;
+   height: 90vh;
 }
 
 .fas:hover {
-  color: var(--blueviolet);
+   color: var(--blueviolet);
 }
 
 .fas {
-  position: absolute;
-  cursor: pointer;
-  top: 45%;
-  z-index: 10;
-  background-color: var(--background-black);
-  padding: 0.8rem;
-  border-radius: 50%;
+   position: absolute;
+   cursor: pointer;
+   top: 45%;
+   z-index: 10;
+   background-color: var(--background-black);
+   padding: 0.8rem;
+   border-radius: 50%;
 }
 
 .fa-arrow-right {
-  right: 2rem;
+   right: 2rem;
 }
 
 .fa-arrow-left {
-  left: 2rem;
+   left: 2rem;
 }
 
 .del-btn {
-  position: absolute;
-  top: 10;
-  right: 10;
-  display: none;
+   position: absolute;
+   top: 10;
+   right: 10;
+   display: none;
 }
